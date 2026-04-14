@@ -15,7 +15,6 @@ def main():
     save_result(results)
 
 
-
 def get_player_count():  
 
     # Überprüfen ob ein Argument eingegeben wurde
@@ -58,7 +57,7 @@ def print_matches(players):
 def input_results(players):
 
     # Nach jedem ergebnis für jedes Matchup fragen
-    # Return updatet players mit wins und losses, sowie results[{"match": int, "playerA": string, "playerB": string, "winner": string}, {}]
+    # Return updatet players mit wins und losses, sowie results[{"match": int, "playerA": string, "playerB": string}, {}]
     return players, results
     pass
 
