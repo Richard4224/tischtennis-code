@@ -14,13 +14,6 @@ def main():
 
     save_result(results)
 
-# t
-
-<<<<<<< HEAD
-=======
-)
-
->>>>>>> 80fa88d957019b660de8a115bc2b6280238b5479
 def get_player_count():  
 
     # Überprüfen ob ein Argument eingegeben wurde
@@ -51,7 +44,8 @@ def get_players(player_count):
     players = []
 
     for i in range(player_count):
-        players.append
+        player_name = input(f"Player {i} name: ")
+        players.append({"name": player_name, "wins": 0, "losses": 0})
 
     return players
 
