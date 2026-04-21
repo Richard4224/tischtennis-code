@@ -20,20 +20,25 @@ def get_player_count():
 
     # Überprüfen ob ein Argument eingegeben wurde
     if len(sys.argv) > 2:
-        print("Usage: 'python tischtennis_turnier.py player_count'")
-        sys.exit(1)
+        # Überprüfe ob Argv ein integer ist
+        try:
+            player_count = int(sys.argv[1])
+        except ValueError:
+            print("Info: player_count argument must be an int")
+            sys.exit(1)
+        # Überprüfe ob Argument ein positiver Integer ist
+        if player_count < 1:
+            print("Info: player_count must be a positive integer")
+            sys.exit(1)
+    else:
 
-    # Überprüfe ob Argv ein integer ist
-    try:
-        player_count = int(sys.argv[1])
-    except ValueError:
-        print("Info: player_count argument must be an int")
-        sys.exit(1)
+        while True:
+            try:
+                player_count = int(input("How many players: "))
+                break
 
-    # Überprüfe ob Argument ein positiver Integer ist
-    if player_count < 1:
-        print("Info: player_count must be a positive integer")
-        sys.exit(1)
+            except ValueError:
+                print("Info: player_count must be a positive integer")
 
     return player_count
 
@@ -54,10 +59,13 @@ def get_players(player_count):
 
 def print_matches(players):
 
+    counter = 0
+
     for player in players:
-         for i in range(players):
+         for i in range(len(players)):
             if not player == players[i]:
-                print(f"\n{i + 1}. {player["name"]} vs {players[i]["name"]}")
+                print(f"\n{counter}. {player["name"]} vs {players[i]["name"]}")
+            counter += 1
 
 
 def input_results(players):
