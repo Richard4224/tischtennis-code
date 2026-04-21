@@ -15,6 +15,7 @@ def main():
 
     save_result(results)
 
+
 def get_player_count():  
 
     # Überprüfen ob ein Argument eingegeben wurde
@@ -50,10 +51,14 @@ def get_players(player_count):
 
     return players
 
+
 def print_matches(players):
 
-    # Jedes matchup in den Terminal printen 
-    pass
+    for player in players:
+         for i in range(players):
+            if not player == players[i]:
+                print(f"\n{i + 1}. {player} vs {players[i]}")
+
 
 def input_results(players):
 
@@ -62,15 +67,18 @@ def input_results(players):
     return players, results
     pass
 
+
 def print_results(players, results):
 
     # Printe alle spieler mit deren Punktzahl (3 Punkte pro win), sortiert und verkünde die Gewinner (die mit höhster Punktzahl)
     pass
 
+
 def save_result(results):
 
     # Speichere die Ergebnisse in einer .txt
     pass
+
 
 if __name__ == "__main__":
     main()
