@@ -30,6 +30,8 @@ def get_player_count():
         if player_count < 1:
             print("Info: player_count must be a positive integer")
             sys.exit(1)
+
+    # Wenn kein command line argument übergeben wurde
     else:
 
         while True:
@@ -59,12 +61,12 @@ def get_players(player_count):
 
 def print_matches(players):
 
-    counter = 0
+    counter = 1
 
     for player in players:
          for i in range(len(players)):
             if not player == players[i]:
-                print(f"\n{counter}. {player["name"]} vs {players[i]["name"]}")
+                print(f"\n{counter}. Match: {player["name"]} vs {players[i]["name"]}")
             counter += 1
 
 

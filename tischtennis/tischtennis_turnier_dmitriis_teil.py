@@ -7,9 +7,9 @@ def main():
 
     players = get_players(player_count)
 
-    print_matches(players)
+    matches = print_matches(players)
 
-    players, results = input_results(players)
+    players, results = input_results(players, matches)
 
     print_results(players, results)
 
@@ -62,6 +62,8 @@ def print_matches(players):
     matches = []
     counter = 1
 
+    print()
+
     for pl1 in range(len(players)):
         for pl2 in range(pl1+1, len(players)):
             name1 = players[pl1]["name"]
@@ -91,6 +93,8 @@ def input_results(players, matches):
     results = []
     counter = 1
     choice = None
+
+    print()
 
     for match in matches:
         print(f"Spiel {counter}: \n {match[0]} vs {match[1]} \n Wer hat gewonnen? \n \t {match[0]} - 1 \n \t {match[1]} - 2")
